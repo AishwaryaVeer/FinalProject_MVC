@@ -1,0 +1,25 @@
+﻿<div style="background-color:mistyrose; font-family:Georgia; font-size:x-large; ">
+    <center>
+
+        <i><u>CUSTOMER ORDER APPLICATION</u></i>
+    </center>
+
+    <br/> <br/> <br/>
+
+    <table border="1" style="background-color:mistyrose; font-family:Georgia; font-size:medium;" cellpadding="40">
+        <tr>
+            <td>@Html.ActionLink("Add Customer", "GetCustomer", "Order")</td>
+            <td>@Html.ActionLink("Add Order" , "AddOrder", "Order")</td>
+            <td>@Html.ActionLink("Select Orders By Name" , "GetOrderByName", "Order")</td>
+            <td>@Html.ActionLink("Select Orders By ID", "GetOrderByID", "Order")</td>
+            <td>@Html.ActionLink("Home Page", "Home", "Order")</td>
+
+            
+        </tr>
+    </table>
+</div>
+
+
+<div style="background-color:linen; font-family:Georgia; font-size:large; width:auto;height:auto">
+    @RenderBody()
+</div>

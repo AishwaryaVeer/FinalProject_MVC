@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "AddOrder";
+}
+
+<center><h2><i>Add Order</i></h2></center>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div style="background-color:lightblue;font-family:Georgia;font-size:medium; width:auto;height:auto">
+
+        <label style="font-size:x-large"><centre>ADD ORDER DETAILS</centre></label>
+        <br/> <br/> <br />
+        <label>Product Name : </label>
+        @Html.TextBox("txtProductName")
+
+        <br /> <br />
+
+        <label>Price : </label>
+        @Html.TextBox("txtPrice")
+
+        <br /> <br /> 
+
+        <label>Customer : </label>
+        @Html.DropDownList("ddlCustomer", Session["Data"] as SelectList)
+
+        <br /> <br />
+
+        <input type="submit" value="Save" name="Command" />
+        
+        <input type="submit" value="Cancel" name="Command" />
+    </div>
+}
+
+
+

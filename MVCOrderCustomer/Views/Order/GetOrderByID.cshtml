@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "GetOrderByID";
+}
+
+<center><h2><i>Get Order By Order ID</i></h2></center>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div style="background-color:lightblue;font-family:Georgia;font-size:medium; width:auto;height:auto">
+
+        <label style="font-size:x-large"><centre>SHOW ORDERS</centre></label>
+        <br /> <br /> <br />
+
+        <label>Customer ID : </label>
+       <input type="number" name="id" id="id" />
+
+        <br /> <br />
+
+        <input type="submit" value="ShowOrder" name="Show" />
+
+        <br /> <br />
+
+        @{
+            if (Session["Data5"] != null)
+            {
+                List<MVCOrderCustomer.Models.tblOrder> li = (List<MVCOrderCustomer.Models.tblOrder>)Session["Data5"];
+                <label>Products Ordered:</label>
+                <br /><br />
+
+                foreach (var x in li)
+                {
+
+                    @Html.ActionLink(@x.ProductName, "Modify", new { ID = @x.OrderID.ToString() })
+                    <br /><br />
+
+                }
+
+            }
+
+
+
+        }
+
+
+    </div>
+
+            }
+
+

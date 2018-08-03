@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Modify";
+}
+
+<center><h2><i>Modify</i></h2></center>
+
+@using (Html.BeginForm())
+{
+    if (Session["Data3"] != null)
+    {
+        MVCOrderCustomer.Models.tblOrder li = (MVCOrderCustomer.Models.tblOrder)Session["Data3"];
+
+        <div style="background-color:lightblue;font-family:Georgia;font-size:medium; width:auto;height:auto">
+
+            <label>Order ID :</label>
+            <input type="text" name="txtid" id="txtid" value="@li.OrderID" readonly />
+
+            <br/><br/>
+
+            <label>Product Name:</label>
+            <input type="text" name="txtname" id="txtname" value="@li.ProductName" readonly />
+
+            <br /><br />
+
+            <label>Price:</label>
+            <input type="number" name="price" id="price" value="@li.Price" />
+
+            <br /><br />
+
+            <input type="submit" value="Modify" />
+
+        </div>
+    }
+}
+

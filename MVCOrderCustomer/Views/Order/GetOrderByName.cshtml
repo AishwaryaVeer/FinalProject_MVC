@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MVCOrderCustomer.Models.OrderCustomerEntities>
+@{
+    ViewBag.Title = "GetOrderByName";
+}
+
+<center><h2><i>Select Order By Name</i></h2></center>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div style="background-color:lightblue;font-family:Georgia;font-size:medium; width:auto;height:auto">
+
+        <label style="font-size:x-large"><centre>SHOW ORDERS</centre></label>
+        <br /> <br /> <br />
+
+        <label>Customer : </label>
+        @Html.DropDownList("ddlCustomer", Session["Data1"] as SelectList)
+
+        <br /> <br />
+
+        <input type="submit" value="ShowOrder" name="Show" />
+
+        <br/> <br/>
+
+        @{
+            if (Session["Data2"] != null)
+            {
+                List<MVCOrderCustomer.Models.tblOrder> li = (List<MVCOrderCustomer.Models.tblOrder>)Session["Data2"];
+                <label>Products Ordered:</label>
+                <br/><br/>
+
+                foreach (var x in li)
+                {
+                    
+                    @Html.ActionLink( @x.ProductName, "Modify", new { ID = @x.OrderID.ToString() })
+                    <br/><br/>
+
+                }
+
+            }
+
+
+
+        }
+
+        
+        </div>
+
+}
+
+        
+
+        
+
+

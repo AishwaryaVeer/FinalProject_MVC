@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "GetCustomer";
+}
+
+<center><h2><i>Add Customer</i></h2></center>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div style="background-color:lightblue;font-family:Georgia;font-size:medium; width:auto;height:auto">
+
+        <label style="font-size:x-large"><centre>Add Customer Name</centre></label>
+        <br /> <br /> <br />
+
+        <label>Customer Name : </label>
+        <input type="text" name="name" id="name" />
+
+        <br /> <br />
+
+        <input type="submit" value="ADD" name="Show" />
+
+        <br /> <br />
+
+        </div>
+}
+
+
